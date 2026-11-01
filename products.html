@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Explore breads, pastries, cakes, and preorder options." name="description"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore breads, pastries, cakes, and save favorites for your North Star Bakery preorder inquiry.">
 <title>Products | North Star Bakery</title>
-<link href="styles.css" rel="stylesheet"/></head>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="touchstone4.css">
+<script src="touchstone4.js" defer></script>
+</head>
 <body class="bakery-site">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header"><div class="header-inner">
-<a class="brand-link" href="index.html">
-<img alt="North Star Bakery logo" class="brand-logo" src="media/bakery-logo_c.png"/>
-</a>
+<a class="brand-link" href="index.html"><img alt="North Star Bakery logo" class="brand-logo" src="media/bakery-logo_c.png"></a>
 <p class="brand-tagline">Made with care, shared with neighbors.</p>
-<nav aria-label="Main navigation" class="site-nav">
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a aria-current="page" href="products.html">Products</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="contact.html">Contact and Preorders</a></li>
-</ul>
-</nav>
-</div></header>
-<main class="page-container" id="main-content"><section aria-label="Page introduction" class="page-hero"><div class="hero-copy"><p class="eyebrow">From our oven to your table</p><h1>Our Breads, Pastries, and Cakes</h1><p>Find something for a quick breakfast, a family meal, or a celebration.
-  The prices below are sample ranges for this student website.</p><a class="button-link" href="contact.html">Request a preorder</a></div><div class="hero-media"><img alt="Fresh artisan bread loaves ready to enjoy" decoding="async" loading="eager" src="media/bakery-bread_c.png"/></div></section>
+<nav aria-label="Main navigation" class="site-nav"><ul class="nav-links">
+<li><a href="index.html">Home</a></li><li><a aria-current="page" href="products.html">Products</a></li>
+<li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact and Preorders</a></li>
+</ul></nav></div></header>
+<main class="page-container" id="main-content">
+<section class="page-hero" aria-label="Page introduction"><div class="hero-copy">
+<p class="eyebrow">From our oven to your table</p><h1>Our Breads, Pastries, and Cakes</h1>
+<p>Find something for a quick breakfast, a family meal, or a celebration. The prices below are sample ranges for this student website.</p>
+<a class="button-link" href="contact.html">Request a preorder</a></div>
+<div class="hero-media"><img alt="Fresh artisan bread loaves ready to enjoy" src="media/bakery-bread_c.png" decoding="async"></div></section>
 
+<section aria-labelledby="favorites-heading" class="content-section surface-section" id="favorites-panel">
+<h2 id="favorites-heading">Your bakery favorites</h2>
+<p>Save items that interest you before preparing a preorder inquiry. Your selections remain in this browser when you return.</p>
+<p class="favorite-summary" id="favorites-summary" role="status" aria-live="polite">Loading your favorites...</p>
+<ul id="favorites-list" class="favorites-list" aria-label="Saved bakery favorites"></ul>
+<p><a href="contact.html">Use these favorites in a preorder inquiry</a></p>
+<p class="prototype-note">Favorites are saved only on your device. This student website has no online checkout or order processing.</p>
+</section>
 
 <section aria-labelledby="breads-heading" class="content-section">
 <h2 id="breads-heading">Breads</h2>
-
-<p>Choose an everyday sandwich loaf or a rustic loaf for sharing.
-    Sample price range: $5-$12 per loaf.</p>
+<p>Choose an everyday sandwich loaf or a rustic loaf for sharing. Sample price range: $5-$12 per loaf.</p>
 <h3>Signature loaf</h3>
-<figure class="signature-figure">
-<img alt="Round rustic brown signature loaf resting on a white linen cloth" decoding="async" loading="lazy" src="media/bakery-signature-loaf_c.png"/>
-<figcaption>Our Signature Loaf: a customer favorite for the table.</figcaption>
-</figure>
+<figure class="signature-figure"><img alt="Round rustic brown signature loaf resting on a white linen cloth" src="media/bakery-signature-loaf_c.png" loading="lazy">
+<figcaption>Our Signature Loaf: a customer favorite for the table.</figcaption></figure>
+<button type="button" class="favorite-button" data-favorite-id="signature-loaf" aria-pressed="false">Save to favorites</button>
 </section>
 <section aria-labelledby="pastries-heading" class="content-section surface-section">
 <h2 id="pastries-heading">Pastries</h2>
-<p>Enjoy a rotating assortment of buttery pastries and baked treats.
-    Sample price range: $3-$7 each.</p>
+<p>Enjoy a rotating assortment of buttery pastries and baked treats. Sample price range: $3-$7 each.</p>
 <p>Ask the bakery about current flavors and daily availability.</p>
+<button type="button" class="favorite-button" data-favorite-id="pastries" aria-pressed="false">Save to favorites</button>
 </section>
 <section aria-labelledby="cakes-heading" class="content-section">
 <h2 id="cakes-heading">Cakes and celebration orders</h2>
-<p>Planning a birthday, workplace gathering, or family event?
-    Ask about simple cakes and shareable treats.</p>
+<p>Planning a birthday, workplace gathering, or family event? Ask about simple cakes and shareable treats.</p>
 <p>Sample price range: $25-$65, depending on size and request.</p>
+<button type="button" class="favorite-button" data-favorite-id="cakes" aria-pressed="false">Save to favorites</button>
 </section>
 <section aria-labelledby="ordering-heading" class="content-section surface-section">
 <h2 id="ordering-heading">How to request a preorder</h2>
-<ol>
-<li>Choose the items and approximate quantities you need.</li>
-<li>Visit our contact page and select "Preorder request."</li>
+<ol><li>Choose the items and approximate quantities you need.</li>
+<li>Save any favorites you would like to remember.</li>
+<li>Visit the contact page and select "Preorder request."</li>
 <li>Include your preferred pickup date and any allergy questions.</li>
-<li>Wait for the bakery to confirm availability and final pricing.</li>
-</ol>
-<p>This student website does not offer online checkout.</p>
-<p><a href="contact.html">Send a preorder inquiry</a>.</p>
+<li>Wait for the bakery to confirm availability and final pricing.</li></ol>
+<p>This student website does not offer online checkout.</p><p><a href="contact.html">Send a preorder inquiry</a>.</p>
 </section>
-</main>
-<footer class="site-footer"><div class="footer-inner">
+</main><footer class="site-footer"><div class="footer-inner">
 <p>North Star Bakery | Neighborhood baked goods and preorder inquiries</p>
 <p><a href="contact.html">Contact the bakery</a></p>
 <p>Student website concept. Hours, location, and prices are examples.</p>
 </div></footer>
-</body>
-</html>
+</body></html>

@@ -1,0 +1,18 @@
+/* Touchstone 4 additions: inherits Touchstone 3 colors and fonts. */
+.favorite-summary { font-weight: bold; margin-bottom: .75rem; }
+.favorites-list { margin: 0 0 1rem; padding-left: 1.35rem; }
+.favorites-list:empty { display: none; }
+.favorite-button {
+  display: inline-block; padding: .65rem 1.05rem; border: 2px solid var(--berry);
+  color: var(--berry); background: var(--cream); border-radius: 999px;
+  font: inherit; font-weight: bold; cursor: pointer; line-height: 1.45;
+}
+.favorite-button:hover, .favorite-button[aria-pressed="true"] { background: var(--berry); color: var(--cream); }
+.favorite-button:focus-visible { outline: 3px solid var(--berry); outline-offset: 4px; }
+.favorites-import { background: var(--oat); padding: 1.25rem; margin: 1.4rem 0; border-radius: var(--radius); }
+.favorites-import h3 { margin-top: 0; }
+.field-error { display: block; color: var(--berry); font-weight: bold; margin-top: .3rem; min-height: 1.2em; }
+[aria-invalid="true"] { border: 3px solid var(--berry); }
+.form-status { font-weight: bold; padding: .5rem 0; max-width: 68ch; }
+.form-status.is-error { color: var(--berry); }
+@media (min-width: 720px) { .favorites-import { padding: 1.5rem 2rem; } }

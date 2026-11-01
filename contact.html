@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Send a preorder inquiry or ask North Star Bakery a question." name="description"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Prepare a preorder inquiry or ask North Star Bakery a question.">
 <title>Contact and Preorders | North Star Bakery</title>
-<link href="styles.css" rel="stylesheet"/></head>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="touchstone4.css">
+<script src="touchstone4.js" defer></script>
+</head>
 <body class="bakery-site">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header"><div class="header-inner">
-<a class="brand-link" href="index.html">
-<img alt="North Star Bakery logo" class="brand-logo" src="media/bakery-logo_c.png"/>
-</a>
+<a class="brand-link" href="index.html"><img alt="North Star Bakery logo" class="brand-logo" src="media/bakery-logo_c.png"></a>
 <p class="brand-tagline">Made with care, shared with neighbors.</p>
-<nav aria-label="Main navigation" class="site-nav">
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="products.html">Products</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a aria-current="page" href="contact.html">Contact and Preorders</a></li>
-</ul>
-</nav>
-</div></header>
-<main class="page-container" id="main-content"><section aria-label="Page introduction" class="page-hero"><div class="hero-copy"><p class="eyebrow">We would love to hear from you</p><h1>Contact Us and Request a Preorder</h1><p>Have a question or want baked goods ready for pickup?
-  Send the details below. A request is not a confirmed order;
-  the bakery must confirm availability and pricing.</p><a class="button-link" href="products.html">Explore our baked goods</a></div><div class="hero-media"><img alt="Fresh pastries from the North Star Bakery display" decoding="async" loading="eager" src="media/bakery-feature-small_c.png"/></div></section>
-
+<nav aria-label="Main navigation" class="site-nav"><ul class="nav-links">
+<li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li>
+<li><a href="about.html">About Us</a></li><li><a aria-current="page" href="contact.html">Contact and Preorders</a></li>
+</ul></nav></div></header>
+<main class="page-container" id="main-content">
+<section class="page-hero" aria-label="Page introduction"><div class="hero-copy">
+<p class="eyebrow">We would love to hear from you</p><h1>Contact Us and Request a Preorder</h1>
+<p>Have a question or want baked goods ready for pickup? Prepare the details below. A request is not a confirmed order; the bakery must confirm availability and pricing.</p>
+<a class="button-link" href="products.html">Explore our baked goods</a></div>
+<div class="hero-media"><img alt="Fresh pastries from the North Star Bakery display" src="media/bakery-feature-small_c.png" decoding="async"></div></section>
 
 <section aria-labelledby="request-heading" class="content-section">
 <h2 id="request-heading">Inquiry and preorder request form</h2>
-<p class="prototype-note">This HTML-only student prototype demonstrates built-in validation.
-    A working server endpoint would be needed to receive submissions.</p>
-<form action="/submit-bakery-request" class="request-form" method="post">
-<fieldset class="form-group">
-<legend>Your contact information</legend>
-<p class="field-row">
-<label class="field-label" for="customer-name">Full name (required)</label>
-<input autocomplete="name" id="customer-name" maxlength="80" minlength="2" name="customer_name" required="" type="text"/>
-</p>
-<p class="field-row">
-<label class="field-label" for="customer-email">Email address (required)</label>
-<input autocomplete="email" id="customer-email" name="customer_email" required="" type="email"/>
-</p>
+<p class="prototype-note">Student demonstration: JavaScript checks your entries and shows feedback. This site does not send your request to a bakery. A working server endpoint is not included.</p>
+<div class="favorites-import" aria-labelledby="saved-products-heading">
+<h3 id="saved-products-heading">Your saved favorites</h3>
+<p id="contact-favorites" aria-live="polite">Checking for saved favorites...</p>
+<button type="button" class="favorite-button" id="use-favorites">Add favorites to my request</button>
+</div>
+<form class="request-form" id="bakery-request-form" novalidate>
+<fieldset class="form-group"><legend>Your contact information</legend>
+<p class="field-row"><label class="field-label" for="customer-name">Full name (required)</label>
+<input type="text" id="customer-name" name="customer_name" autocomplete="name" minlength="2" maxlength="80" required aria-describedby="customer-name-error">
+<span id="customer-name-error" class="field-error" aria-live="polite"></span></p>
+<p class="field-row"><label class="field-label" for="customer-email">Email address (required)</label>
+<input type="email" id="customer-email" name="customer_email" autocomplete="email" required aria-describedby="customer-email-error">
+<span id="customer-email-error" class="field-error" aria-live="polite"></span></p>
 </fieldset>
-<fieldset class="form-group">
-<legend>Your inquiry or preorder</legend>
-<p class="field-row">
-<label class="field-label" for="request-type">Request type (required)</label>
-<select id="request-type" name="request_type" required="">
-<option value="">Choose a request type</option>
-<option value="preorder">Preorder request</option>
-<option value="question">General question</option>
-</select>
-</p>
-<p class="field-row">
-<label class="field-label" for="pickup-date">Preferred pickup date (for preorders)</label>
-<input id="pickup-date" name="pickup_date" type="date"/>
-</p>
-<p class="field-row">
-<label class="field-label" for="item-details">Item details or question (required)</label>
-<textarea cols="45" id="item-details" maxlength="1000" minlength="10" name="item_details" required="" rows="5"></textarea>
-</p>
-<p class="field-row">
-<label class="field-label" for="allergy-notes">Allergy notes (optional)</label>
-<textarea cols="45" id="allergy-notes" maxlength="500" name="allergy_notes" rows="3"></textarea>
-</p>
+<fieldset class="form-group"><legend>Your inquiry or preorder</legend>
+<p class="field-row"><label class="field-label" for="request-type">Request type (required)</label>
+<select id="request-type" name="request_type" required aria-describedby="request-type-error">
+<option value="">Choose a request type</option><option value="preorder">Preorder request</option><option value="question">General question</option>
+</select><span id="request-type-error" class="field-error" aria-live="polite"></span></p>
+<p class="field-row"><label class="field-label" for="pickup-date">Preferred pickup date (required for preorders)</label>
+<input type="date" id="pickup-date" name="pickup_date" aria-describedby="pickup-date-error">
+<span id="pickup-date-error" class="field-error" aria-live="polite"></span></p>
+<p class="field-row"><label class="field-label" for="item-details">Item details or question (required; at least 10 characters)</label>
+<textarea id="item-details" name="item_details" rows="5" cols="45" minlength="10" maxlength="1000" required aria-describedby="item-details-error"></textarea>
+<span id="item-details-error" class="field-error" aria-live="polite"></span></p>
+<p class="field-row"><label class="field-label" for="allergy-notes">Allergy notes (optional)</label>
+<textarea id="allergy-notes" name="allergy_notes" rows="3" cols="45" maxlength="500"></textarea></p>
 </fieldset>
-<p>For a preorder, include items, quantities, and pickup date.
-      Please confirm ingredient and cross-contact questions with staff.</p>
-<button class="form-submit" type="submit">Send inquiry request</button>
-</form>
-</section>
+<p>For a preorder, include items, quantities, and pickup date. Please confirm ingredient and cross-contact questions with staff.</p>
+<button class="form-submit" type="submit">Check my inquiry</button>
+<p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+</form></section>
 <section aria-labelledby="location-heading" class="content-section surface-section">
 <h2 id="location-heading">Location</h2>
-<p>North Star Bakery is presented as a neighborhood bakery in this
-    student project. Street address: to be confirmed by the client.</p>
-<p>Contact the bakery for pickup instructions before traveling.</p>
-</section>
+<p>North Star Bakery is presented as a neighborhood bakery in this student project. Street address: to be confirmed by the client.</p>
+<p>Contact the bakery for pickup instructions before traveling.</p></section>
 <section aria-labelledby="hours-heading" class="content-section">
-<h2 id="hours-heading">Hours of operation</h2>
-<p>Sample schedule; confirm actual hours before publication.</p>
-<ul>
-<li>Tuesday-Friday: 7 a.m.-5 p.m.</li>
-<li>Saturday: 8 a.m.-3 p.m.</li>
-<li>Sunday-Monday: closed</li>
-</ul>
-</section>
-</main>
-<footer class="site-footer"><div class="footer-inner">
+<h2 id="hours-heading">Hours of operation</h2><p>Sample schedule; confirm actual hours before publication.</p>
+<ul><li>Tuesday-Friday: 7 a.m.-5 p.m.</li><li>Saturday: 8 a.m.-3 p.m.</li><li>Sunday-Monday: closed</li></ul></section>
+</main><footer class="site-footer"><div class="footer-inner">
 <p>North Star Bakery | Neighborhood baked goods and preorder inquiries</p>
 <p><a href="contact.html">Contact the bakery</a></p>
 <p>Student website concept. Hours, location, and prices are examples.</p>
 </div></footer>
-</body>
-</html>
+</body></html>
